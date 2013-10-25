@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CPR @ Rensselaer Polytechnic Institute</title>
+<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+<%= csrf_meta_tags %>
+</head>
+<body bgcolor="#000000">
+<table border="0" cellpadding="0" cellspacing="0" align="center" style="width: 950px; height: 100%; background-color: #FFFFFF;">
+<tr style="height: 160px;"><td align="center" style="background-color: #BFBFBF;"> <%=image_tag("topbanner.jpg", height: '160', width: '950') %></td></tr>
+<tr style="height: 35px; background-color: #797979;"><td>
+<table border="0" cellpadding="0" cellspacing="0" align="center" style="width: 90%; height: 100%; background-color: #797979;">
+<tbody align="center" style="font-family:arial; font-size:18px; color:#FFFFFF;">
+<tr align="center" style="font-family: arial; font-size: 18px; height: 4%;">
+<td onmouseover="style.backgroundColor='#D6D6D6'; style.color='#000000'; style.cursor='pointer';" onmouseout="style.backgroundColor='#797979'; style.color='#FFFFFF'; style.cursor='auto';" onclick="window.location.href='/welcome/index';">Home</td>
+<td onmouseover="style.backgroundColor='#D6D6D6'; style.color='#000000'; style.cursor='pointer';" onmouseout="style.backgroundColor='#797979'; style.color='#FFFFFF'; style.cursor='auto';" onclick="window.location.href='/welcome/handsonly';">Hands Only CPR</td>
+<td onmouseover="style.backgroundColor='#D6D6D6'; style.color='#000000'; style.cursor='pointer';" onmouseout="style.backgroundColor='#797979'; style.color='#FFFFFF'; style.cursor='auto';" onclick="window.location.href='/welcome/learn';">Learn CPR or First Aid</td>
+<td onmouseover="style.backgroundColor='#D6D6D6'; style.color='#000000'; style.cursor='pointer';" onmouseout="style.backgroundColor='#797979'; style.color='#FFFFFF'; style.cursor='auto';" onclick="window.location.href='/welcome/aed';">AEDs on Campus</td>
+<td onmouseover="style.backgroundColor='#D6D6D6'; style.color='#000000'; style.cursor='pointer';" onmouseout="style.backgroundColor='#797979'; style.color='#FFFFFF'; style.cursor='auto';" onclick="window.location.href='/welcome/info';">More Info</td>
+<td onmouseover="style.backgroundColor='#D6D6D6'; style.color='#000000'; style.cursor='pointer';" onmouseout="style.backgroundColor='#797979'; style.color='#FFFFFF'; style.cursor='auto';" onclick="window.location.href='/account';">My Account</td>
+</tr>
+</tbody>
+</table>
+</td></tr>
+<tr><td>
+<table border="0" cellpadding="10" cellspacing="10" align="center" style="width: 90%;">
+<tbody align="center" style="font-family:arial; font-size: 14px; color:#000000;">
+
+<%= yield %>
+
+</tbody>
+</table>
+<tr style="height: 50px;"><td align="center" style="background-color: #BFBFBF; font-family: arial; font-size: 16px; color: #000000;"><%=image_tag("bottombanner.jpg", height: '50', width: '950') %></td></tr>
+</table>
+</body>
+</html>

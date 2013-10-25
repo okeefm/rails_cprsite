@@ -1,0 +1,24 @@
+<p>
+  <strong>Name:</strong>
+  <%= @user.first_name + " " + @user.last_name %>
+</p>
+ 
+<p>
+  <strong>Email:</strong>
+  <%= mail_to(@user.email) %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= number_to_phone(@user.phone) %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @user.address_1 %><br />
+  <%= @user.address_2 %><br />
+  <%= @user.city + ", " + @user.state + " " + @user.zip + " " + @user.country %>
+</p>
+
+<%= link_to 'Back', users_path %> &nbsp; | &nbsp;
+<%= link_to 'Edit', edit_user_path(@user) %>

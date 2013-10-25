@@ -1,0 +1,33 @@
+<%= form_for @course_type do |f| %>
+
+	<% if @course_type.errors.any? %>
+	  <div id="errorExplanation">
+		<h2><%= pluralize(@course_type.errors.count, "error") %> prohibited
+		  this course type from being saved:</h2>
+		<ul>
+		<% @course_type.errors.full_messages.each do |msg| %>
+		  <li><%= msg %></li>
+		<% end %>
+		</ul>
+	  </div>
+  <% end %>
+  
+	<p>
+		<%= f.label :name %><br>
+		<%= f.text_field :name %>
+	</p>
+	
+	<p>
+		<%= f.label :default_web_description %><br>
+		<%= f.text_area :default_web_description %>
+	</p>
+	
+	<p>
+		<%= f.label :default_email_description %><br>
+		<%= f.text_area :default_email_description %>
+	</p>
+	
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>

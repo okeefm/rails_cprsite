@@ -1,0 +1,17 @@
+<p>
+  <strong>Name:</strong>
+  <%= @course_type.name %>
+</p>
+ 
+<p>
+  <strong>Web Description:</strong>
+  <%= @course_type.default_web_description %>
+</p>
+
+<p>
+  <strong>Email Description:</strong>
+  <%= @course_type.default_email_description %>
+</p>
+
+<%= link_to 'Back', course_types_path %> &nbsp; | &nbsp;
+<%= link_to 'Edit', edit_course_type_path(@course_type) %>
