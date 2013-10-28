@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131025190708) do
+ActiveRecord::Schema.define(version: 20131028191236) do
 
   create_table "course_types", force: true do |t|
     t.text     "default_web_description"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20131025190708) do
     t.string   "perishable_token"
     t.string   "first_name"
     t.string   "last_name"
-    t.integer  "phone"
+    t.string   "phone"
     t.string   "address_1"
     t.string   "address_2"
     t.string   "city"
