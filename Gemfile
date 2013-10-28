@@ -46,6 +46,8 @@ end
 
 # Use authlogic for authentication
 gem 'authlogic'
+# No! Use devise, because
+gem 'devise'
 
 # Use phone_number for phone number validation
 gem 'phone_number'
