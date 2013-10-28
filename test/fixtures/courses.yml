@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  start: 2013-10-28 18:55:28
+  end: 2013-10-28 18:55:28
+  max_capacity: 1
+  web_description: MyText
+  email_description: MyText
+  class_location: MyString
+
+two:
+  name: MyString
+  start: 2013-10-28 18:55:28
+  end: 2013-10-28 18:55:28
+  max_capacity: 1
+  web_description: MyText
+  email_description: MyText
+  class_location: MyString
