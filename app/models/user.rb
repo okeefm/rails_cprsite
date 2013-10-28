@@ -1,4 +1,13 @@
 class User < ActiveRecord::Base
+
+	acts_as_authentic do |c|
+		c.login_field = :email
+	end
+	
+	before_save do
+		self.phone = self.phone.gsub(/\D/, "")
+	end
+
 	attr_accessor :password
 	validates :first_name, presence: true
 	validates :last_name, presence: true
@@ -9,13 +18,12 @@ class User < ActiveRecord::Base
 	validates :phone, presence: true
 	validates :address_1, presence: true
 	validates :city, presence: true
-	validates :state, presence: true, length: { is: 2 }
 	
 	def email_not_changed?
 		return email == self.email
 	end
 	
 	def password_not_changed?
-		return password == self.password
+		return (!password || (password == self.password))
 	end
 end
