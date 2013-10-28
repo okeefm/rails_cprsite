@@ -11,7 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131028225528) do
+ActiveRecord::Schema.define(version: 20131028230127) do
+
+  create_table "course_organizations", force: true do |t|
+    t.integer "organization_id"
+    t.integer "course_id"
+  end
 
   create_table "course_types", force: true do |t|
     t.text     "default_web_description"
