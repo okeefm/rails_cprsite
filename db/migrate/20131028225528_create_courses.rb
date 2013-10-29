@@ -8,6 +8,7 @@ class CreateCourses < ActiveRecord::Migration
       t.text :web_description
       t.text :email_description
       t.string :class_location
+	  t.belongs_to :organization
 
       t.timestamps
     end
