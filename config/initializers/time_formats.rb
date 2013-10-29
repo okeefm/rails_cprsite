@@ -1,0 +1,1 @@
+ Time::DATE_FORMATS[:colloquial] = "%A %B %d,  %I:%M %p"
