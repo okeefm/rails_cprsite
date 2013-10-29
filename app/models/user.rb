@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-	has_and_belongs_to_many :organizations
+	has_and_belongs_to_many :courses
+	has_and_belongs_to_many :privilege_levels
 
 	acts_as_authentic do |c|
 		c.login_field = :email
@@ -27,4 +28,9 @@ class User < ActiveRecord::Base
 	def password_not_changed?
 		return (!password || (password == self.password))
 	end
+	
+	def to_s
+		return self.last_name + ", " + self.first_name
+	end
+
 end
