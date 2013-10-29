@@ -11,12 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131028230127) do
-
-  create_table "course_organizations", force: true do |t|
-    t.integer "organization_id"
-    t.integer "course_id"
-  end
+ActiveRecord::Schema.define(version: 20131029074636) do
 
   create_table "course_types", force: true do |t|
     t.text     "default_web_description"
@@ -34,11 +29,23 @@ ActiveRecord::Schema.define(version: 20131028230127) do
     t.text     "web_description"
     t.text     "email_description"
     t.string   "class_location"
+    t.integer  "organization_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  create_table "courses_users", force: true do |t|
+    t.integer "course_id"
+    t.integer "user_id"
+  end
+
   create_table "organizations", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "privilege_levels", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -63,6 +70,11 @@ ActiveRecord::Schema.define(version: 20131028230127) do
     t.string   "country"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "users_privilege_levels", force: true do |t|
+    t.integer "user_id"
+    t.integer "privilege_level_id"
   end
 
 end
