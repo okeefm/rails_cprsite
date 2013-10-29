@@ -1,0 +1,14 @@
+<h1>List all courses</h1>
+
+<%= link_to 'New course', new_course_path %>
+
+<tr>
+	<th>Name</th>
+	<th>Location</th>
+	<th>Start Time</th>
+	<th>End Time</th>
+	<th>Edit</th>
+	<th>Delete</th>
+</tr>
+
+<%= render @courses %>

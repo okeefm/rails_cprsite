@@ -1,0 +1,47 @@
+<p>
+  <strong>Name:</strong>
+  <%= @course.name %>
+</p>
+
+<p>
+	<strong>Organization:</strong>
+	<%= @course.organization %>
+</p>
+
+<p>
+	<strong>Location:</strong>
+	<%= @course.class_location %>
+</p>
+
+<p>
+	<strong>Maximum Capacity:</strong>
+	<%= @course.max_capacity %>
+</p>
+
+<p>
+	<strong>Start:</strong>
+	<%= @course.start.to_formatted_s(:db) %>
+</p>
+
+<p>
+	<strong>End:</strong>
+	<%= @course.end.to_formatted_s(:db) %>
+</p>
+
+<p>
+	<strong>Instructors:</strong>
+	<%= @course.instructors.join("; ") %>
+</p>
+	
+<p>
+	<strong>Web Description:</strong>
+	<%= @course.web_description %>
+</p>
+
+<p>
+	<strong>Email Description:</strong>
+	<%= @course.email_description %>
+</p>
+
+<%= link_to 'Back', :back %> &nbsp; | &nbsp;
+<%= link_to 'Edit', edit_course_path(@course) %>
