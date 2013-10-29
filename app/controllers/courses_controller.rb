@@ -3,7 +3,6 @@ class CoursesController < ApplicationController
 		@course = Course.new
 		
 		@instructors = PrivilegeLevel.where(:name => "Instructor").joins(:users)[0].users
-		logger.debug "Instructors: " + @instructors.inspect
 	end
 	
 	def create
@@ -26,6 +25,8 @@ class CoursesController < ApplicationController
 	
 	def edit
 		@course = Course.find(params[:id])
+		@instructors = PrivilegeLevel.where(:name => "Instructor").joins(:users)[0].users
+
 	end
 	
 	def update
