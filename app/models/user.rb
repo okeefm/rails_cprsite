@@ -21,6 +21,11 @@ class User < ActiveRecord::Base
 	validates :address_1, presence: true
 	validates :city, presence: true
 	
+	def update_privilege_levels(privilege_level_ids)
+		self.privilege_level_ids = privilege_level_ids
+		return self.save(validate: false)
+	end
+	
 	def email_not_changed?
 		return email == self.email
 	end
@@ -29,8 +34,10 @@ class User < ActiveRecord::Base
 		return (!password || (password == self.password))
 	end
 	
+	
 	def to_s
 		return self.last_name + ", " + self.first_name
 	end
+	
 
 end

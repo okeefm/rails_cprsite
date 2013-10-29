@@ -1,6 +1,9 @@
 class CoursesController < ApplicationController
 	def new
 		@course = Course.new
+		
+		@instructors = PrivilegeLevel.where(:name => "Instructor").joins(:users)[0].users
+		logger.debug "Instructors: " + @instructors.inspect
 	end
 	
 	def create

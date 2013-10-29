@@ -44,7 +44,7 @@
 	
 	<p>
 		<%= f.label :instructors %><br>
-		<%= f.collection_select(:instructor_ids, User.all, :id, :to_s, {}, {:multiple=> true}) %>
+		<%= f.collection_select(:instructor_ids, @instructors, :id, :to_s, {}, {:multiple=> true}) %>
 	</p>
 	
 	<p>

@@ -20,5 +20,10 @@
   <%= @user.city + ", " + @user.state + " " + @user.zip + " " + @user.country %>
 </p>
 
+<p>
+	<strong>Privilege Levels:</strong>
+	<%= @user.privilege_levels.join("; ") %>
+</p>
+
 <%= link_to 'Back', users_path %> &nbsp; | &nbsp;
 <%= link_to 'Edit', edit_user_path(@user) %>
