@@ -1,0 +1,23 @@
+<%= form_for(@user, :url=> update_user_privilege_levels_user_path) do |f| %>
+	<% if @user.errors.any? %>
+		<div id="error_explanation">
+			  <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user's privilege levels from being saved:</h2>
+
+			  <ul>
+			  <% @user.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			  <% end %>
+			  </ul>
+		</div>
+	<% end %>
+  
+	<p>
+		<%= f.label :privilege_levels %><br>
+		<%= f.collection_select(:privilege_level_ids, PrivilegeLevel.all, :id, :to_s, {}, {:multiple=> true}) %>
+	</p>
+	
+	<p>
+		<%= f.submit %>
+	</p>
+
+<% end %>
