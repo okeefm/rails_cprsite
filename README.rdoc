@@ -1,28 +1,17 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the code for a Rails version of the RPI CPR Site.
 
-Things you may want to cover:
+To set up this project:
+	*	install Ruby (2.0.0p247 is currently being used)
+	*	install Rails 4 ("gem install rails")
+	*	clone repo ("git clone https://github.com/okeefm/rails_cprsite")
+	* 	cd to repo ("cd rails_cprsite")
+	*	install missing gems ("bundle install")
+	*	ensure Sqlite3 is installed, if you are using it as your database (varies by OS)
+	*	run rake db:migrate to update db schema
+	*	to run server in dev environment, type "rails server"
+	
+All code is licensed under the MIT license, and copyrighted by its respective author(s).
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+{<img src="https://codeclimate.com/github/okeefm/rails_cprsite.png" />}[https://codeclimate.com/github/okeefm/rails_cprsite]
