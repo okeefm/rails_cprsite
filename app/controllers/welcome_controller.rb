@@ -1,5 +1,6 @@
 class WelcomeController < ApplicationController
   def index
+	@courses = Course.where(start: Time.now.midnight..Time.now.midnight+ 21.days).order(:start).first(5)
   end
 
   def handsonly
