@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131028225326) do
+ActiveRecord::Schema.define(version: 20131029121458) do
 
   create_table "course_types", force: true do |t|
     t.text     "default_web_description"
@@ -19,6 +19,43 @@ ActiveRecord::Schema.define(version: 20131028225326) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "courses", force: true do |t|
+    t.string   "name"
+    t.datetime "start"
+    t.datetime "end"
+    t.integer  "max_capacity"
+    t.text     "web_description"
+    t.text     "email_description"
+    t.string   "class_location"
+    t.integer  "organization_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "courses_users", force: true do |t|
+    t.integer "course_id"
+    t.integer "user_id"
+  end
+
+  create_table "organizations", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "privilege_levels", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "privilege_levels", ["name"], name: "index_privilege_levels_on_name", unique: true
+
+  create_table "privilege_levels_users", force: true do |t|
+    t.integer "user_id"
+    t.integer "privilege_level_id"
   end
 
   create_table "users", force: true do |t|
